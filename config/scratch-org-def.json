@@ -3,7 +3,7 @@
   "edition": "Developer",
   "hasSampleData" : true,
   "language": "en_US",
-  "features": ["FieldAuditTrail","EnableSetPasswordInApi"],
+  "features": ["FieldAuditTrail","EnableSetPasswordInApi", "SLACK"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true

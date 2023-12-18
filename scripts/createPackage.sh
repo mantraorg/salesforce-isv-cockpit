@@ -11,12 +11,12 @@ if [ -z "$secrets.DEV_HUB_URL" ]; then
 fi
 
 echo "List existing package versions"
-sfdx force:package:version:list -p $PACKAGE_NAME --concise
+sf package version list -p $PACKAGE_NAME --concise
 
 echo "Create new package version"
 # For Version create with dependcies work I need package name AND version in my project json
-PACKAGE_VERSION="$(execute sfdx force:package:version:create -p $PACKAGE_NAME -f config/package-org-def.json -x -w 10 --codecoverage --json | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
-echo "Promote with: sfdx force:package:version:promote -p $PACKAGE_VERSION"
+PACKAGE_VERSION="$(execute sf package version create --installation-key-bypass --package $PACKAGE_NAME -f config/package-org-def.json -x -w 10 --codecoverage --json | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
+echo "Promote with:  sf package version promote -p $PACKAGE_VERSION"
 echo "Install from: /packaging/installPackage.apexp?p0=$PACKAGE_VERSION"
 
 if [ $QA_ORG_ALIAS ]; then

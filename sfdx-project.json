@@ -2,7 +2,7 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "package": "isv-cockpit-mantratech",
+      "package": "IsvCockpit",
       "versionName": "1.0.0",
       "versionNumber": "1.0.0.NEXT",
       "definitionFile": "config/scratch-org-def.json",
@@ -19,6 +19,8 @@
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "59.0",
   "packageAliases": {
-    "lma": "04t30000001DWL0AAO"
+    "lma": "04t30000001DWL0AAO",
+    "IsvCockpit": "0Ho8e0000004CAGCA2",
+    "IsvCockpit@1.0.0-1": "04t8e000000gXeRAAU"
   }
 }
