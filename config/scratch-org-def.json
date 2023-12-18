@@ -1,6 +1,7 @@
 {
   "orgName": "isv-cockpit_DEV",
   "edition": "Developer",
+  "hasSampleData" : true,
   "language": "en_US",
   "features": ["FieldAuditTrail","EnableSetPasswordInApi"],
   "settings": {

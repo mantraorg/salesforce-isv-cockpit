@@ -2,8 +2,6 @@ delete [SELECT Id FROM AppError__c];
 delete [SELECT Id FROM sfLma__Package_Version__c];
 delete [SELECT Id FROM sfLma__License__c];
 delete [SELECT Id FROM sfLma__Package__c];
-delete [SELECT Id FROM Entitlement];
-delete [SELECT Id FROM Account];
 
 LmaPackage p1 = new LmaPackage().name('App A').ns('nsA');
 

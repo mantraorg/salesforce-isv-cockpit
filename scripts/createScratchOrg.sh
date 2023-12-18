@@ -7,17 +7,17 @@ execute() {
 
 if [ -z "$DEV_HUB_URL" ]; then
   echo "set default devhub user"
-  execute sf config set defaultdevhubusername=$DEV_HUB_ALIAS
+  execute sf config set target-dev-hub=$DEV_HUB_ALIAS
 
   echo "Deleting old scratch org"
-  sf force org delete --no-prompt --target-org $SCRATCH_ORG_ALIAS
+  sf org delete scratch --no-prompt --target-org $SCRATCH_ORG_ALIAS
 fi
 
 echo "Creating scratch org"
-execute sf force org create --setalias $SCRATCH_ORG_ALIAS --setdefaultusername --definitionfile ./config/scratch-org-def.json --durationdays 30
+execute sf org create scratch --alias $SCRATCH_ORG_ALIAS --set-default --definition-file ./config/scratch-org-def.json --duration-days 30 --wait 15
 
 echo "Install dependencies"
-execute sfdx force:package:install --package 04t30000001DWL0AAO --publishwait 5 --wait 10 -u $SCRATCH_ORG_ALIAS
+execute sfdx force:package:install --package 04t30000001DWL0AAO --publishwait 5 --wait 10 --target-org $SCRATCH_ORG_ALIAS
 
 echo "Pushing changes to scratch org"
 execute sf force source push
