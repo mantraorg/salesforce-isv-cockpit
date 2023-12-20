@@ -21,6 +21,7 @@
   "packageAliases": {
     "lma": "04t30000001DWL0AAO",
     "IsvCockpit": "0Ho8e0000004CAGCA2",
-    "IsvCockpit@1.0.0-1": "04t8e000000gXeRAAU"
+    "IsvCockpit@1.0.0-1": "04t8e000000gXeRAAU",
+    "IsvCockpit@1.0.0-2": "04t8e000000gXeWAAU"
   }
 }
